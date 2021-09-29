@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./img/background-weather-app.jpg);
+  background-size: cover;
+}
+
+.app-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: 'Rubik', sans-serif;
+}
+
+nav {
+  height: 80px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 'logo search-bar toggle-temp';
+}
+
+.logo {
+  grid-area: logo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+}
+
+.search-bar {
+  grid-area: search-bar;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  width: 80%;
+  border: none;
+  border-bottom: 2px solid black;
+  outline: none;
+  margin-right: 5px;
+  background: none;
+  text-align: center;
+}
+
+input::placeholder {
+  font-family: 'Rubik', sans-serif;
+}
+
+.bi-search {
+  cursor: pointer;
+}
+
+.toggle-temp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.temp-unit {
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  height: 33px;
+  width: 63px;
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1px;
+}
+
+.switch {
+  height: 25px;
+  width: 25px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, red, blue);
+}
+
+.hide {
+  display: none;
+}
