@@ -18,10 +18,20 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   font-family: 'Rubik', sans-serif;
+  display: grid;
+  grid-template-rows: 0.3fr 1fr 0.2fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'nav'
+    'weather-dashboard'
+    'footer';
 }
 
+/* navbar */
 nav {
-  height: 150px;
+  grid-area: nav;
+  /* height: 150px; */
+  background: linear-gradient(to top, rgba(255, 255, 255, 0), rgb(2, 153, 253));
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(3, 1fr);
@@ -37,6 +47,7 @@ nav {
 
 h1 {
   font-family: 'Nunito', sans-serif;
+  font-style: italic;
 }
 
 .search-bar {
@@ -49,7 +60,7 @@ h1 {
 input {
   width: 80%;
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   outline: none;
   margin-right: 5px;
   background: none;
@@ -58,6 +69,7 @@ input {
 
 input::placeholder {
   font-family: 'Rubik', sans-serif;
+  font-style: italic;
 }
 
 .bi-search {
@@ -77,12 +89,13 @@ input::placeholder {
   user-select: none;
   height: 33px;
   width: 63px;
-  border: 1px solid black;
   border-radius: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 1px;
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 }
 
 .switch {
@@ -92,14 +105,89 @@ input::placeholder {
   background: linear-gradient(45deg, red, blue);
 }
 
+/* weather dashboard main app */
+.weather-dashboard {
+  grid-area: weather-dashboard;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-info {
+  position: relative;
+  height: 350px;
+  width: 500px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.493);
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+}
+
+.weather-icon {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  top: -20px;
+  left: -20px;
+  background: linear-gradient(45deg, pink, skyblue);
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+  z-index: 1;
+}
+
+.weather-country-id {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  top: -20px;
+  left: 20px;
+  background: linear-gradient(-45deg, pink, skyblue);
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* footer */
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.openweathermap {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 81, 133, 0.747)
+  );
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.openweathermap img {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* utility */
 .hide {
   display: none;
 }
 
+/* media queries */
 @media only screen and (max-width: 768px) {
   nav {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
       'logo logo logo'
@@ -108,5 +196,10 @@ input::placeholder {
 
   input {
     width: 50%;
+  }
+
+  .weather-info {
+    height: 250px;
+    width: 250px;
   }
 }
