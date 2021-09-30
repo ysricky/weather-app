@@ -72,7 +72,9 @@ input::placeholder {
   font-style: italic;
 }
 
-.bi-search {
+button {
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
@@ -111,16 +113,23 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.weather-info {
+.weather-info1 {
   position: relative;
   height: 350px;
-  width: 500px;
+  width: 350px;
   border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.493);
   box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+
+  /* centering temperature-info */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .weather-icon {
@@ -148,6 +157,40 @@ input::placeholder {
     -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.weather-description {
+  text-transform: capitalize;
+  position: absolute;
+  font-size: 15px;
+  top: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.temperature-info {
+  font-size: 10rem;
+}
+
+.location-info {
+  position: absolute;
+  font-size: 30px;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.weather-info2 {
+  height: 350px;
+  width: 350px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.493);
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -179,6 +222,38 @@ footer {
 }
 
 /* utility */
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .hide {
   display: none;
 }
@@ -191,15 +266,24 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
       'logo logo logo'
-      'search-bar search-bar toggle-temp';
+      'toggle-temp search-bar search-bar';
   }
 
   input {
     width: 50%;
   }
 
-  .weather-info {
+  .weather-info1,
+  .weather-info2 {
     height: 250px;
     width: 250px;
+  }
+
+  .weather-info1 {
+    margin-top: 2.5rem;
+  }
+
+  .temperature-info {
+    font-size: 7rem;
   }
 }

@@ -1,5 +1,5 @@
-import toggleTemp from './modules/toggleTemp';
+import toggleUnits from './modules/toggleUnits';
 import generateWeather from './modules/getCityWeather';
 
-toggleTemp();
+toggleUnits();
 generateWeather();
