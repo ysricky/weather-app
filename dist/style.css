@@ -162,6 +162,7 @@ button {
 
 .weather-description {
   text-transform: capitalize;
+  font-style: italic;
   position: absolute;
   font-size: 15px;
   top: 2rem;

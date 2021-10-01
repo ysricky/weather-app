@@ -1,5 +1,3 @@
-import toggleUnits from './modules/toggleUnits';
-import generateWeather from './modules/getCityWeather';
+import loadUI from './modules/loadUI';
 
-toggleUnits();
-generateWeather();
+loadUI();

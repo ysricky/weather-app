@@ -1,4 +1,4 @@
-const displayData = (weatherObj) => {
+const displayWeatherInfo = (weatherObj) => {
   // weather-info1 card
   document.querySelector('.location-info span').textContent = weatherObj.name;
   document.querySelector(
@@ -26,4 +26,28 @@ const displayData = (weatherObj) => {
     weatherObj.wind.speed;
 };
 
-export default displayData;
+const hideWeatherInfo = () => {
+  document.querySelector('.weather-info1').classList.add('hide');
+  document.querySelector('.weather-info2').classList.add('hide');
+};
+
+const unhideWeatherInfo = () => {
+  document.querySelector('.weather-info1').classList.remove('hide');
+  document.querySelector('.weather-info2').classList.remove('hide');
+};
+
+const hideAlert = () => {
+  document.querySelector('.not-found').classList.add('hide');
+};
+
+const showAlert = () => {
+  document.querySelector('.not-found').classList.remove('hide');
+};
+
+export {
+  displayWeatherInfo,
+  hideWeatherInfo,
+  unhideWeatherInfo,
+  hideAlert,
+  showAlert,
+};

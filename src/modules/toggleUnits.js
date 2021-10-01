@@ -1,9 +1,4 @@
 const toggleUnits = () => {
-  const currentTemp = document.querySelectorAll('.temp-unit-data');
-  const btnTempUnit = document.querySelector('.temp-unit');
-  const btnFahrenheit = document.querySelector('.fahrenheit');
-  const btnCelsius = document.querySelector('.celsius');
-
   let tempUnit = 'c';
 
   const switchUnit = () => {
@@ -24,14 +19,16 @@ const toggleUnits = () => {
     return convertedUnit;
   };
 
+  const currentTemp = document.querySelectorAll('.temp-unit-data');
+  const btnTempUnit = document.querySelector('.temp-unit');
   btnTempUnit.addEventListener('click', () => {
     switchUnit();
     currentTemp.forEach((span) => {
-      // eslint-disable-next-line no-param-reassign
-      span.textContent = `${unitConverter(span.textContent)}`;
+      const spanUnit = span;
+      spanUnit.textContent = `${unitConverter(spanUnit.textContent)}`;
     });
-    btnCelsius.classList.toggle('hide');
-    btnFahrenheit.classList.toggle('hide');
+    document.querySelector('.fahrenheit').classList.toggle('hide');
+    document.querySelector('.celsius').classList.toggle('hide');
   });
 };
 
