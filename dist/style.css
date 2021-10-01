@@ -19,7 +19,8 @@ body {
   min-width: 100vw;
   font-family: 'Rubik', sans-serif;
   display: grid;
-  grid-template-rows: 0.3fr 1fr 0.2fr;
+  grid-template-rows: min-content auto min-content;
+  /* grid-template-rows: 0.3fr 1fr 0.2fr; */
   grid-template-columns: 1fr;
   grid-template-areas:
     'nav'
