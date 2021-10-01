@@ -3,7 +3,7 @@ const displayWeatherInfo = (weatherObj) => {
   document.querySelector('.location-info span').textContent = weatherObj.name;
   document.querySelector(
     '.weather-icon img'
-  ).src = `http://openweathermap.org/img/w/${weatherObj.weather[0].icon}.png`;
+  ).src = `https://openweathermap.org/img/w/${weatherObj.weather[0].icon}.png`;
   document.querySelector('.weather-country-id span').textContent =
     weatherObj.sys.country;
   document.querySelector('.temperature-info span').textContent = Math.round(
